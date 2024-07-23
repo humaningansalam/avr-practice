@@ -1,0 +1,476 @@
+
+AVR0427_INT3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000300  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000060  00000000  00000000  00000354  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 000000c0  00000000  00000000  000003b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   00000258  00000000  00000000  00000474  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 00000141  00000000  00000000  000006cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   0000028f  00000000  00000000  0000080d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  000000e0  00000000  00000000  00000a9c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    000000fe  00000000  00000000  00000b7c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_loc    00000047  00000000  00000000  00000c7a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   8:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  10:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  14:	0c 94 4f 01 	jmp	0x29e	; 0x29e <__vector_5>
+  18:	0c 94 20 01 	jmp	0x240	; 0x240 <__vector_6>
+  1c:	0c 94 f1 00 	jmp	0x1e2	; 0x1e2 <__vector_7>
+  20:	0c 94 c2 00 	jmp	0x184	; 0x184 <__vector_8>
+  24:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  28:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  2c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  30:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  34:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  38:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  3c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  40:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  44:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  48:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  4c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  50:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  54:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  58:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  5c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  60:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  64:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  68:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  6c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  70:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  74:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  78:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  7c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  80:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  84:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  88:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e0 e0       	ldi	r30, 0x00	; 0
+  a0:	f3 e0       	ldi	r31, 0x03	; 3
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 30       	cpi	r26, 0x00	; 0
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	0e 94 64 00 	call	0xc8	; 0xc8 <main>
+  b6:	0c 94 7e 01 	jmp	0x2fc	; 0x2fc <_exit>
+
+000000ba <__bad_interrupt>:
+  ba:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000be <Init>:
+
+            return  0;
+}
+
+void      Init(void){
+            LED_Init();
+  be:	0e 94 6b 00 	call	0xd6	; 0xd6 <LED_Init>
+            KEY_Init();
+  c2:	0e 94 ab 00 	call	0x156	; 0x156 <KEY_Init>
+}
+  c6:	08 95       	ret
+
+000000c8 <main>:
+
+void      Init(void);
+
+int         main(void)
+{           
+            Init();
+  c8:	0e 94 5f 00 	call	0xbe	; 0xbe <Init>
+            LED_On(0x2A);
+  cc:	8a e2       	ldi	r24, 0x2A	; 42
+  ce:	0e 94 71 00 	call	0xe2	; 0xe2 <LED_On>
+
+            sei();
+  d2:	78 94       	sei
+  d4:	ff cf       	rjmp	.-2      	; 0xd4 <main+0xc>
+
+000000d6 <LED_Init>:
+#include <avr/io.h>
+
+#include "led.h"
+
+void      LED_Init(void){
+            DDRF  =  0xFC;   // 1111 1100
+  d6:	8c ef       	ldi	r24, 0xFC	; 252
+  d8:	80 93 61 00 	sts	0x0061, r24
+            PORTF =  0xFC;  //  1111 1100
+  dc:	80 93 62 00 	sts	0x0062, r24
+}
+  e0:	08 95       	ret
+
+000000e2 <LED_On>:
+void      LED_On(byte  Data){                                 
+            PORTF  =  (PORTF | 0xFC)  &  (~(Data<<2));
+  e2:	e2 e6       	ldi	r30, 0x62	; 98
+  e4:	f0 e0       	ldi	r31, 0x00	; 0
+  e6:	90 81       	ld	r25, Z
+  e8:	88 0f       	add	r24, r24
+  ea:	88 0f       	add	r24, r24
+  ec:	80 95       	com	r24
+  ee:	9c 6f       	ori	r25, 0xFC	; 252
+  f0:	98 23       	and	r25, r24
+  f2:	90 83       	st	Z, r25
+//                       ???? ???? | 1111 1100 --> 1111 11 ??              V
+//         0x20                                            0010 0000
+//                                                            1000 0000(<<2)
+//                                                             0111 1111(~)        V
+//                                                            0111 11?? -->        최종적인 값(0x20)
+}//                                                           1011 11?? -->         0x30
+  f4:	08 95       	ret
+
+000000f6 <Delay>:
+ //                                                            1101 11??-->         0x38
+ //                                                            1110 11??-->         0x3C
+
+void      Delay(byte4  Delay){                          // 0  0   0   0  1   0  1   1  (>>)
+  f6:	df 93       	push	r29
+  f8:	cf 93       	push	r28
+  fa:	00 d0       	rcall	.+0      	; 0xfc <Delay+0x6>
+  fc:	00 d0       	rcall	.+0      	; 0xfe <Delay+0x8>
+  fe:	cd b7       	in	r28, 0x3d	; 61
+ 100:	de b7       	in	r29, 0x3e	; 62
+ 102:	9b 01       	movw	r18, r22
+ 104:	ac 01       	movw	r20, r24
+            volatile  byte4 i;                                 // 1  1   1   1  0   1  0   0  (~)
+            for(i=0; i<Delay; i++);                        //  0  0   0   0  1   1  1   1  (&)
+ 106:	19 82       	std	Y+1, r1	; 0x01
+ 108:	1a 82       	std	Y+2, r1	; 0x02
+ 10a:	1b 82       	std	Y+3, r1	; 0x03
+ 10c:	1c 82       	std	Y+4, r1	; 0x04
+ 10e:	89 81       	ldd	r24, Y+1	; 0x01
+ 110:	9a 81       	ldd	r25, Y+2	; 0x02
+ 112:	ab 81       	ldd	r26, Y+3	; 0x03
+ 114:	bc 81       	ldd	r27, Y+4	; 0x04
+ 116:	82 17       	cp	r24, r18
+ 118:	93 07       	cpc	r25, r19
+ 11a:	a4 07       	cpc	r26, r20
+ 11c:	b5 07       	cpc	r27, r21
+ 11e:	a0 f4       	brcc	.+40     	; 0x148 <Delay+0x52>
+ 120:	89 81       	ldd	r24, Y+1	; 0x01
+ 122:	9a 81       	ldd	r25, Y+2	; 0x02
+ 124:	ab 81       	ldd	r26, Y+3	; 0x03
+ 126:	bc 81       	ldd	r27, Y+4	; 0x04
+ 128:	01 96       	adiw	r24, 0x01	; 1
+ 12a:	a1 1d       	adc	r26, r1
+ 12c:	b1 1d       	adc	r27, r1
+ 12e:	89 83       	std	Y+1, r24	; 0x01
+ 130:	9a 83       	std	Y+2, r25	; 0x02
+ 132:	ab 83       	std	Y+3, r26	; 0x03
+ 134:	bc 83       	std	Y+4, r27	; 0x04
+ 136:	89 81       	ldd	r24, Y+1	; 0x01
+ 138:	9a 81       	ldd	r25, Y+2	; 0x02
+ 13a:	ab 81       	ldd	r26, Y+3	; 0x03
+ 13c:	bc 81       	ldd	r27, Y+4	; 0x04
+ 13e:	82 17       	cp	r24, r18
+ 140:	93 07       	cpc	r25, r19
+ 142:	a4 07       	cpc	r26, r20
+ 144:	b5 07       	cpc	r27, r21
+ 146:	60 f3       	brcs	.-40     	; 0x120 <Delay+0x2a>
+}    
+ 148:	0f 90       	pop	r0
+ 14a:	0f 90       	pop	r0
+ 14c:	0f 90       	pop	r0
+ 14e:	0f 90       	pop	r0
+ 150:	cf 91       	pop	r28
+ 152:	df 91       	pop	r29
+ 154:	08 95       	ret
+
+00000156 <KEY_Init>:
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include "led.h"
+
+void      KEY_Init(void){
+            DDRE  &=  0x0F;    PORTE  |=  0xF0;   //상위비트E.7654 --> 입력용, 초기값1
+ 156:	82 b1       	in	r24, 0x02	; 2
+ 158:	8f 70       	andi	r24, 0x0F	; 15
+ 15a:	82 b9       	out	0x02, r24	; 2
+ 15c:	83 b1       	in	r24, 0x03	; 3
+ 15e:	80 6f       	ori	r24, 0xF0	; 240
+ 160:	83 b9       	out	0x03, r24	; 3
+            DDRE  |=    0x0F;    PORTE  &=0xF0;   //하위비트E.3210 --> 출력용, 초기값0
+ 162:	82 b1       	in	r24, 0x02	; 2
+ 164:	8f 60       	ori	r24, 0x0F	; 15
+ 166:	82 b9       	out	0x02, r24	; 2
+ 168:	83 b1       	in	r24, 0x03	; 3
+ 16a:	80 7f       	andi	r24, 0xF0	; 240
+ 16c:	83 b9       	out	0x03, r24	; 3
+            EICRB   =  0xAA;                                //1010 1010 --> E.7654 --> 버튼을 누를 때 인터럽트서비스루틴으로 가라.
+ 16e:	8a ea       	ldi	r24, 0xAA	; 170
+ 170:	8a bf       	out	0x3a, r24	; 58
+            EIMSK   =  0xF0;                                // 1111 0000 --> E.7654 --> 인터럽트 인식핀으로 사용하겠다.
+ 172:	80 ef       	ldi	r24, 0xF0	; 240
+ 174:	89 bf       	out	0x39, r24	; 57
+}
+ 176:	08 95       	ret
+
+00000178 <KEY_Read>:
+byte      KEY_Read(void){                                //E7 E6 E5 E4 E3 E2 E1 E0
+            return  ~(PINE>>4) &  0x0F;              // 1  1   1   1  x   x   x   x
+ 178:	81 b1       	in	r24, 0x01	; 1
+ 17a:	82 95       	swap	r24
+ 17c:	8f 70       	andi	r24, 0x0F	; 15
+ 17e:	80 95       	com	r24
+}                                                                  // 1  0   1   1  x   x   x   x
+ 180:	8f 70       	andi	r24, 0x0F	; 15
+ 182:	08 95       	ret
+
+00000184 <__vector_8>:
+             LED_On(0x30);  Delay(1000);
+}
+ISR(INT6_vect){
+             LED_On(0x38);  Delay(1000);
+}
+ISR(INT7_vect){
+ 184:	1f 92       	push	r1
+ 186:	0f 92       	push	r0
+ 188:	0f b6       	in	r0, 0x3f	; 63
+ 18a:	0f 92       	push	r0
+ 18c:	0b b6       	in	r0, 0x3b	; 59
+ 18e:	0f 92       	push	r0
+ 190:	11 24       	eor	r1, r1
+ 192:	2f 93       	push	r18
+ 194:	3f 93       	push	r19
+ 196:	4f 93       	push	r20
+ 198:	5f 93       	push	r21
+ 19a:	6f 93       	push	r22
+ 19c:	7f 93       	push	r23
+ 19e:	8f 93       	push	r24
+ 1a0:	9f 93       	push	r25
+ 1a2:	af 93       	push	r26
+ 1a4:	bf 93       	push	r27
+ 1a6:	ef 93       	push	r30
+ 1a8:	ff 93       	push	r31
+              LED_On(0x3C);  Delay(1000);
+ 1aa:	8c e3       	ldi	r24, 0x3C	; 60
+ 1ac:	0e 94 71 00 	call	0xe2	; 0xe2 <LED_On>
+ 1b0:	68 ee       	ldi	r22, 0xE8	; 232
+ 1b2:	73 e0       	ldi	r23, 0x03	; 3
+ 1b4:	80 e0       	ldi	r24, 0x00	; 0
+ 1b6:	90 e0       	ldi	r25, 0x00	; 0
+ 1b8:	0e 94 7b 00 	call	0xf6	; 0xf6 <Delay>
+}
+ 1bc:	ff 91       	pop	r31
+ 1be:	ef 91       	pop	r30
+ 1c0:	bf 91       	pop	r27
+ 1c2:	af 91       	pop	r26
+ 1c4:	9f 91       	pop	r25
+ 1c6:	8f 91       	pop	r24
+ 1c8:	7f 91       	pop	r23
+ 1ca:	6f 91       	pop	r22
+ 1cc:	5f 91       	pop	r21
+ 1ce:	4f 91       	pop	r20
+ 1d0:	3f 91       	pop	r19
+ 1d2:	2f 91       	pop	r18
+ 1d4:	0f 90       	pop	r0
+ 1d6:	0b be       	out	0x3b, r0	; 59
+ 1d8:	0f 90       	pop	r0
+ 1da:	0f be       	out	0x3f, r0	; 63
+ 1dc:	0f 90       	pop	r0
+ 1de:	1f 90       	pop	r1
+ 1e0:	18 95       	reti
+
+000001e2 <__vector_7>:
+            LED_On(0x20);  Delay(1000);
+}
+ISR(INT5_vect){
+             LED_On(0x30);  Delay(1000);
+}
+ISR(INT6_vect){
+ 1e2:	1f 92       	push	r1
+ 1e4:	0f 92       	push	r0
+ 1e6:	0f b6       	in	r0, 0x3f	; 63
+ 1e8:	0f 92       	push	r0
+ 1ea:	0b b6       	in	r0, 0x3b	; 59
+ 1ec:	0f 92       	push	r0
+ 1ee:	11 24       	eor	r1, r1
+ 1f0:	2f 93       	push	r18
+ 1f2:	3f 93       	push	r19
+ 1f4:	4f 93       	push	r20
+ 1f6:	5f 93       	push	r21
+ 1f8:	6f 93       	push	r22
+ 1fa:	7f 93       	push	r23
+ 1fc:	8f 93       	push	r24
+ 1fe:	9f 93       	push	r25
+ 200:	af 93       	push	r26
+ 202:	bf 93       	push	r27
+ 204:	ef 93       	push	r30
+ 206:	ff 93       	push	r31
+             LED_On(0x38);  Delay(1000);
+ 208:	88 e3       	ldi	r24, 0x38	; 56
+ 20a:	0e 94 71 00 	call	0xe2	; 0xe2 <LED_On>
+ 20e:	68 ee       	ldi	r22, 0xE8	; 232
+ 210:	73 e0       	ldi	r23, 0x03	; 3
+ 212:	80 e0       	ldi	r24, 0x00	; 0
+ 214:	90 e0       	ldi	r25, 0x00	; 0
+ 216:	0e 94 7b 00 	call	0xf6	; 0xf6 <Delay>
+}
+ 21a:	ff 91       	pop	r31
+ 21c:	ef 91       	pop	r30
+ 21e:	bf 91       	pop	r27
+ 220:	af 91       	pop	r26
+ 222:	9f 91       	pop	r25
+ 224:	8f 91       	pop	r24
+ 226:	7f 91       	pop	r23
+ 228:	6f 91       	pop	r22
+ 22a:	5f 91       	pop	r21
+ 22c:	4f 91       	pop	r20
+ 22e:	3f 91       	pop	r19
+ 230:	2f 91       	pop	r18
+ 232:	0f 90       	pop	r0
+ 234:	0b be       	out	0x3b, r0	; 59
+ 236:	0f 90       	pop	r0
+ 238:	0f be       	out	0x3f, r0	; 63
+ 23a:	0f 90       	pop	r0
+ 23c:	1f 90       	pop	r1
+ 23e:	18 95       	reti
+
+00000240 <__vector_6>:
+}                                                                  // 1  0   1   1  x   x   x   x
+                                                                  // 0  0   0   0   0  1  0   0 (return시킬 값)
+ISR(INT4_vect){
+            LED_On(0x20);  Delay(1000);
+}
+ISR(INT5_vect){
+ 240:	1f 92       	push	r1
+ 242:	0f 92       	push	r0
+ 244:	0f b6       	in	r0, 0x3f	; 63
+ 246:	0f 92       	push	r0
+ 248:	0b b6       	in	r0, 0x3b	; 59
+ 24a:	0f 92       	push	r0
+ 24c:	11 24       	eor	r1, r1
+ 24e:	2f 93       	push	r18
+ 250:	3f 93       	push	r19
+ 252:	4f 93       	push	r20
+ 254:	5f 93       	push	r21
+ 256:	6f 93       	push	r22
+ 258:	7f 93       	push	r23
+ 25a:	8f 93       	push	r24
+ 25c:	9f 93       	push	r25
+ 25e:	af 93       	push	r26
+ 260:	bf 93       	push	r27
+ 262:	ef 93       	push	r30
+ 264:	ff 93       	push	r31
+             LED_On(0x30);  Delay(1000);
+ 266:	80 e3       	ldi	r24, 0x30	; 48
+ 268:	0e 94 71 00 	call	0xe2	; 0xe2 <LED_On>
+ 26c:	68 ee       	ldi	r22, 0xE8	; 232
+ 26e:	73 e0       	ldi	r23, 0x03	; 3
+ 270:	80 e0       	ldi	r24, 0x00	; 0
+ 272:	90 e0       	ldi	r25, 0x00	; 0
+ 274:	0e 94 7b 00 	call	0xf6	; 0xf6 <Delay>
+}
+ 278:	ff 91       	pop	r31
+ 27a:	ef 91       	pop	r30
+ 27c:	bf 91       	pop	r27
+ 27e:	af 91       	pop	r26
+ 280:	9f 91       	pop	r25
+ 282:	8f 91       	pop	r24
+ 284:	7f 91       	pop	r23
+ 286:	6f 91       	pop	r22
+ 288:	5f 91       	pop	r21
+ 28a:	4f 91       	pop	r20
+ 28c:	3f 91       	pop	r19
+ 28e:	2f 91       	pop	r18
+ 290:	0f 90       	pop	r0
+ 292:	0b be       	out	0x3b, r0	; 59
+ 294:	0f 90       	pop	r0
+ 296:	0f be       	out	0x3f, r0	; 63
+ 298:	0f 90       	pop	r0
+ 29a:	1f 90       	pop	r1
+ 29c:	18 95       	reti
+
+0000029e <__vector_5>:
+}
+byte      KEY_Read(void){                                //E7 E6 E5 E4 E3 E2 E1 E0
+            return  ~(PINE>>4) &  0x0F;              // 1  1   1   1  x   x   x   x
+}                                                                  // 1  0   1   1  x   x   x   x
+                                                                  // 0  0   0   0   0  1  0   0 (return시킬 값)
+ISR(INT4_vect){
+ 29e:	1f 92       	push	r1
+ 2a0:	0f 92       	push	r0
+ 2a2:	0f b6       	in	r0, 0x3f	; 63
+ 2a4:	0f 92       	push	r0
+ 2a6:	0b b6       	in	r0, 0x3b	; 59
+ 2a8:	0f 92       	push	r0
+ 2aa:	11 24       	eor	r1, r1
+ 2ac:	2f 93       	push	r18
+ 2ae:	3f 93       	push	r19
+ 2b0:	4f 93       	push	r20
+ 2b2:	5f 93       	push	r21
+ 2b4:	6f 93       	push	r22
+ 2b6:	7f 93       	push	r23
+ 2b8:	8f 93       	push	r24
+ 2ba:	9f 93       	push	r25
+ 2bc:	af 93       	push	r26
+ 2be:	bf 93       	push	r27
+ 2c0:	ef 93       	push	r30
+ 2c2:	ff 93       	push	r31
+            LED_On(0x20);  Delay(1000);
+ 2c4:	80 e2       	ldi	r24, 0x20	; 32
+ 2c6:	0e 94 71 00 	call	0xe2	; 0xe2 <LED_On>
+ 2ca:	68 ee       	ldi	r22, 0xE8	; 232
+ 2cc:	73 e0       	ldi	r23, 0x03	; 3
+ 2ce:	80 e0       	ldi	r24, 0x00	; 0
+ 2d0:	90 e0       	ldi	r25, 0x00	; 0
+ 2d2:	0e 94 7b 00 	call	0xf6	; 0xf6 <Delay>
+}
+ 2d6:	ff 91       	pop	r31
+ 2d8:	ef 91       	pop	r30
+ 2da:	bf 91       	pop	r27
+ 2dc:	af 91       	pop	r26
+ 2de:	9f 91       	pop	r25
+ 2e0:	8f 91       	pop	r24
+ 2e2:	7f 91       	pop	r23
+ 2e4:	6f 91       	pop	r22
+ 2e6:	5f 91       	pop	r21
+ 2e8:	4f 91       	pop	r20
+ 2ea:	3f 91       	pop	r19
+ 2ec:	2f 91       	pop	r18
+ 2ee:	0f 90       	pop	r0
+ 2f0:	0b be       	out	0x3b, r0	; 59
+ 2f2:	0f 90       	pop	r0
+ 2f4:	0f be       	out	0x3f, r0	; 63
+ 2f6:	0f 90       	pop	r0
+ 2f8:	1f 90       	pop	r1
+ 2fa:	18 95       	reti
+
+000002fc <_exit>:
+ 2fc:	f8 94       	cli
+
+000002fe <__stop_program>:
+ 2fe:	ff cf       	rjmp	.-2      	; 0x2fe <__stop_program>

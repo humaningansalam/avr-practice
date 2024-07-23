@@ -1,0 +1,647 @@
+
+AVR0427_INT.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000010  00800100  000003e2  00000456  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000003e2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .debug_aranges 00000060  00000000  00000000  00000466  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 000000db  00000000  00000000  000004c6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000439  00000000  00000000  000005a1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000001c6  00000000  00000000  000009da  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000002a7  00000000  00000000  00000ba0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  000000d0  00000000  00000000  00000e48  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    00000117  00000000  00000000  00000f18  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    000000a0  00000000  00000000  0000102f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   8:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+   c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  10:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  14:	0c 94 ba 00 	jmp	0x174	; 0x174 <__vector_5>
+  18:	0c 94 03 01 	jmp	0x206	; 0x206 <__vector_6>
+  1c:	0c 94 4c 01 	jmp	0x298	; 0x298 <__vector_7>
+  20:	0c 94 95 01 	jmp	0x32a	; 0x32a <__vector_8>
+  24:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  28:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  2c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  30:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  34:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  38:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  3c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  40:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  44:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  48:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  4c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  50:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  54:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  58:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  5c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  60:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  64:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  68:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  6c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  70:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  74:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  78:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  7c:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  80:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  84:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+  88:	0c 94 5d 00 	jmp	0xba	; 0xba <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e2 ee       	ldi	r30, 0xE2	; 226
+  a0:	f3 e0       	ldi	r31, 0x03	; 3
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 31       	cpi	r26, 0x10	; 16
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  b2:	0e 94 64 00 	call	0xc8	; 0xc8 <main>
+  b6:	0c 94 ef 01 	jmp	0x3de	; 0x3de <_exit>
+
+000000ba <__bad_interrupt>:
+  ba:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000be <Init>:
+
+	return 0;
+}
+
+void   Init(void){
+         FND_Init();
+  be:	0e 94 68 00 	call	0xd0	; 0xd0 <FND_Init>
+         KEY_Init();
+  c2:	0e 94 de 01 	call	0x3bc	; 0x3bc <KEY_Init>
+}
+  c6:	08 95       	ret
+
+000000c8 <main>:
+
+void Init(void);
+
+int main(void){
+
+	Init();
+  c8:	0e 94 5f 00 	call	0xbe	; 0xbe <Init>
+    sei();       // 인터럽트를 가동(인가)해주세요.
+  cc:	78 94       	sei
+  ce:	ff cf       	rjmp	.-2      	; 0xce <main+0x6>
+
+000000d0 <FND_Init>:
+const  int8_t1  FND_Common[4] = {0x10, 0x08, 0x02, 0x01};
+const  int8_t1  FND_Dot[2] = {0x80, 0x00};
+
+
+void   FND_Init(void){
+         DDRG  =  0x1B;  // 0001 1011
+  d0:	8b e1       	ldi	r24, 0x1B	; 27
+  d2:	80 93 64 00 	sts	0x0064, r24
+         DDRD  =  0xFF;   // 1111 1111
+  d6:	8f ef       	ldi	r24, 0xFF	; 255
+  d8:	81 bb       	out	0x11, r24	; 17
+}
+  da:	08 95       	ret
+
+000000dc <FND_On>:
+
+
+void   FND_On(const int8_t1 Num, const int8_t1 Digit, const int8_t1 Dot){
+         if(Dot)  PORTD  =  FND_Font[Num]  &  0x7F;
+  dc:	44 23       	and	r20, r20
+  de:	91 f4       	brne	.+36     	; 0x104 <FND_On+0x28>
+         else      PORTD  =  FND_Font[Num];
+  e0:	e8 2f       	mov	r30, r24
+  e2:	f0 e0       	ldi	r31, 0x00	; 0
+  e4:	e0 50       	subi	r30, 0x00	; 0
+  e6:	ff 4f       	sbci	r31, 0xFF	; 255
+  e8:	80 81       	ld	r24, Z
+  ea:	82 bb       	out	0x12, r24	; 18
+         PORTG  =  (PORTG  &  0xE4)  |  FND_Common[Digit];
+  ec:	80 91 65 00 	lds	r24, 0x0065
+  f0:	e6 2f       	mov	r30, r22
+  f2:	f0 e0       	ldi	r31, 0x00	; 0
+  f4:	e6 5f       	subi	r30, 0xF6	; 246
+  f6:	fe 4f       	sbci	r31, 0xFE	; 254
+  f8:	84 7e       	andi	r24, 0xE4	; 228
+  fa:	90 81       	ld	r25, Z
+  fc:	89 2b       	or	r24, r25
+  fe:	80 93 65 00 	sts	0x0065, r24
+}
+ 102:	08 95       	ret
+         DDRD  =  0xFF;   // 1111 1111
+}
+
+
+void   FND_On(const int8_t1 Num, const int8_t1 Digit, const int8_t1 Dot){
+         if(Dot)  PORTD  =  FND_Font[Num]  &  0x7F;
+ 104:	e8 2f       	mov	r30, r24
+ 106:	f0 e0       	ldi	r31, 0x00	; 0
+ 108:	e0 50       	subi	r30, 0x00	; 0
+ 10a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 10c:	80 81       	ld	r24, Z
+ 10e:	8f 77       	andi	r24, 0x7F	; 127
+ 110:	82 bb       	out	0x12, r24	; 18
+ 112:	ec cf       	rjmp	.-40     	; 0xec <FND_On+0x10>
+
+00000114 <Delay>:
+         else      PORTD  =  FND_Font[Num];
+         PORTG  =  (PORTG  &  0xE4)  |  FND_Common[Digit];
+}
+
+
+void   Delay(int32_t1 Delay){
+ 114:	df 93       	push	r29
+ 116:	cf 93       	push	r28
+ 118:	00 d0       	rcall	.+0      	; 0x11a <Delay+0x6>
+ 11a:	00 d0       	rcall	.+0      	; 0x11c <Delay+0x8>
+ 11c:	cd b7       	in	r28, 0x3d	; 61
+ 11e:	de b7       	in	r29, 0x3e	; 62
+ 120:	9b 01       	movw	r18, r22
+ 122:	ac 01       	movw	r20, r24
+         volatile  int32_t1  i;
+         for(i=0; i<Delay; i++);
+ 124:	19 82       	std	Y+1, r1	; 0x01
+ 126:	1a 82       	std	Y+2, r1	; 0x02
+ 128:	1b 82       	std	Y+3, r1	; 0x03
+ 12a:	1c 82       	std	Y+4, r1	; 0x04
+ 12c:	89 81       	ldd	r24, Y+1	; 0x01
+ 12e:	9a 81       	ldd	r25, Y+2	; 0x02
+ 130:	ab 81       	ldd	r26, Y+3	; 0x03
+ 132:	bc 81       	ldd	r27, Y+4	; 0x04
+ 134:	82 17       	cp	r24, r18
+ 136:	93 07       	cpc	r25, r19
+ 138:	a4 07       	cpc	r26, r20
+ 13a:	b5 07       	cpc	r27, r21
+ 13c:	a0 f4       	brcc	.+40     	; 0x166 <Delay+0x52>
+ 13e:	89 81       	ldd	r24, Y+1	; 0x01
+ 140:	9a 81       	ldd	r25, Y+2	; 0x02
+ 142:	ab 81       	ldd	r26, Y+3	; 0x03
+ 144:	bc 81       	ldd	r27, Y+4	; 0x04
+ 146:	01 96       	adiw	r24, 0x01	; 1
+ 148:	a1 1d       	adc	r26, r1
+ 14a:	b1 1d       	adc	r27, r1
+ 14c:	89 83       	std	Y+1, r24	; 0x01
+ 14e:	9a 83       	std	Y+2, r25	; 0x02
+ 150:	ab 83       	std	Y+3, r26	; 0x03
+ 152:	bc 83       	std	Y+4, r27	; 0x04
+ 154:	89 81       	ldd	r24, Y+1	; 0x01
+ 156:	9a 81       	ldd	r25, Y+2	; 0x02
+ 158:	ab 81       	ldd	r26, Y+3	; 0x03
+ 15a:	bc 81       	ldd	r27, Y+4	; 0x04
+ 15c:	82 17       	cp	r24, r18
+ 15e:	93 07       	cpc	r25, r19
+ 160:	a4 07       	cpc	r26, r20
+ 162:	b5 07       	cpc	r27, r21
+ 164:	60 f3       	brcs	.-40     	; 0x13e <Delay+0x2a>
+}
+ 166:	0f 90       	pop	r0
+ 168:	0f 90       	pop	r0
+ 16a:	0f 90       	pop	r0
+ 16c:	0f 90       	pop	r0
+ 16e:	cf 91       	pop	r28
+ 170:	df 91       	pop	r29
+ 172:	08 95       	ret
+
+00000174 <__vector_5>:
+
+
+ISR(INT4_vect){
+ 174:	1f 92       	push	r1
+ 176:	0f 92       	push	r0
+ 178:	0f b6       	in	r0, 0x3f	; 63
+ 17a:	0f 92       	push	r0
+ 17c:	11 24       	eor	r1, r1
+ 17e:	2f 93       	push	r18
+ 180:	8f 93       	push	r24
+ 182:	9f 93       	push	r25
+ 184:	af 93       	push	r26
+ 186:	bf 93       	push	r27
+ 188:	df 93       	push	r29
+ 18a:	cf 93       	push	r28
+ 18c:	00 d0       	rcall	.+0      	; 0x18e <__vector_5+0x1a>
+ 18e:	00 d0       	rcall	.+0      	; 0x190 <__vector_5+0x1c>
+ 190:	cd b7       	in	r28, 0x3d	; 61
+ 192:	de b7       	in	r29, 0x3e	; 62
+         DDRD  =  0xFF;   // 1111 1111
+}
+
+
+void   FND_On(const int8_t1 Num, const int8_t1 Digit, const int8_t1 Dot){
+         if(Dot)  PORTD  =  FND_Font[Num]  &  0x7F;
+ 194:	89 e1       	ldi	r24, 0x19	; 25
+ 196:	82 bb       	out	0x12, r24	; 18
+         else      PORTD  =  FND_Font[Num];
+         PORTG  =  (PORTG  &  0xE4)  |  FND_Common[Digit];
+ 198:	80 91 65 00 	lds	r24, 0x0065
+ 19c:	84 7e       	andi	r24, 0xE4	; 228
+ 19e:	80 61       	ori	r24, 0x10	; 16
+ 1a0:	80 93 65 00 	sts	0x0065, r24
+}
+
+
+void   Delay(int32_t1 Delay){
+         volatile  int32_t1  i;
+         for(i=0; i<Delay; i++);
+ 1a4:	19 82       	std	Y+1, r1	; 0x01
+ 1a6:	1a 82       	std	Y+2, r1	; 0x02
+ 1a8:	1b 82       	std	Y+3, r1	; 0x03
+ 1aa:	1c 82       	std	Y+4, r1	; 0x04
+ 1ac:	89 81       	ldd	r24, Y+1	; 0x01
+ 1ae:	9a 81       	ldd	r25, Y+2	; 0x02
+ 1b0:	ab 81       	ldd	r26, Y+3	; 0x03
+ 1b2:	bc 81       	ldd	r27, Y+4	; 0x04
+ 1b4:	88 5e       	subi	r24, 0xE8	; 232
+ 1b6:	93 40       	sbci	r25, 0x03	; 3
+ 1b8:	a0 40       	sbci	r26, 0x00	; 0
+ 1ba:	b0 40       	sbci	r27, 0x00	; 0
+ 1bc:	a0 f4       	brcc	.+40     	; 0x1e6 <__vector_5+0x72>
+ 1be:	89 81       	ldd	r24, Y+1	; 0x01
+ 1c0:	9a 81       	ldd	r25, Y+2	; 0x02
+ 1c2:	ab 81       	ldd	r26, Y+3	; 0x03
+ 1c4:	bc 81       	ldd	r27, Y+4	; 0x04
+ 1c6:	01 96       	adiw	r24, 0x01	; 1
+ 1c8:	a1 1d       	adc	r26, r1
+ 1ca:	b1 1d       	adc	r27, r1
+ 1cc:	89 83       	std	Y+1, r24	; 0x01
+ 1ce:	9a 83       	std	Y+2, r25	; 0x02
+ 1d0:	ab 83       	std	Y+3, r26	; 0x03
+ 1d2:	bc 83       	std	Y+4, r27	; 0x04
+ 1d4:	89 81       	ldd	r24, Y+1	; 0x01
+ 1d6:	9a 81       	ldd	r25, Y+2	; 0x02
+ 1d8:	ab 81       	ldd	r26, Y+3	; 0x03
+ 1da:	bc 81       	ldd	r27, Y+4	; 0x04
+ 1dc:	88 5e       	subi	r24, 0xE8	; 232
+ 1de:	93 40       	sbci	r25, 0x03	; 3
+ 1e0:	a0 40       	sbci	r26, 0x00	; 0
+ 1e2:	b0 40       	sbci	r27, 0x00	; 0
+ 1e4:	60 f3       	brcs	.-40     	; 0x1be <__vector_5+0x4a>
+}
+
+
+ISR(INT4_vect){
+         FND_On(4, 0, 1);   Delay(1000);
+}
+ 1e6:	0f 90       	pop	r0
+ 1e8:	0f 90       	pop	r0
+ 1ea:	0f 90       	pop	r0
+ 1ec:	0f 90       	pop	r0
+ 1ee:	cf 91       	pop	r28
+ 1f0:	df 91       	pop	r29
+ 1f2:	bf 91       	pop	r27
+ 1f4:	af 91       	pop	r26
+ 1f6:	9f 91       	pop	r25
+ 1f8:	8f 91       	pop	r24
+ 1fa:	2f 91       	pop	r18
+ 1fc:	0f 90       	pop	r0
+ 1fe:	0f be       	out	0x3f, r0	; 63
+ 200:	0f 90       	pop	r0
+ 202:	1f 90       	pop	r1
+ 204:	18 95       	reti
+
+00000206 <__vector_6>:
+ISR(INT5_vect){
+ 206:	1f 92       	push	r1
+ 208:	0f 92       	push	r0
+ 20a:	0f b6       	in	r0, 0x3f	; 63
+ 20c:	0f 92       	push	r0
+ 20e:	11 24       	eor	r1, r1
+ 210:	2f 93       	push	r18
+ 212:	8f 93       	push	r24
+ 214:	9f 93       	push	r25
+ 216:	af 93       	push	r26
+ 218:	bf 93       	push	r27
+ 21a:	df 93       	push	r29
+ 21c:	cf 93       	push	r28
+ 21e:	00 d0       	rcall	.+0      	; 0x220 <__vector_6+0x1a>
+ 220:	00 d0       	rcall	.+0      	; 0x222 <__vector_6+0x1c>
+ 222:	cd b7       	in	r28, 0x3d	; 61
+ 224:	de b7       	in	r29, 0x3e	; 62
+         DDRD  =  0xFF;   // 1111 1111
+}
+
+
+void   FND_On(const int8_t1 Num, const int8_t1 Digit, const int8_t1 Dot){
+         if(Dot)  PORTD  =  FND_Font[Num]  &  0x7F;
+ 226:	82 e1       	ldi	r24, 0x12	; 18
+ 228:	82 bb       	out	0x12, r24	; 18
+         else      PORTD  =  FND_Font[Num];
+         PORTG  =  (PORTG  &  0xE4)  |  FND_Common[Digit];
+ 22a:	80 91 65 00 	lds	r24, 0x0065
+ 22e:	84 7e       	andi	r24, 0xE4	; 228
+ 230:	88 60       	ori	r24, 0x08	; 8
+ 232:	80 93 65 00 	sts	0x0065, r24
+}
+
+
+void   Delay(int32_t1 Delay){
+         volatile  int32_t1  i;
+         for(i=0; i<Delay; i++);
+ 236:	19 82       	std	Y+1, r1	; 0x01
+ 238:	1a 82       	std	Y+2, r1	; 0x02
+ 23a:	1b 82       	std	Y+3, r1	; 0x03
+ 23c:	1c 82       	std	Y+4, r1	; 0x04
+ 23e:	89 81       	ldd	r24, Y+1	; 0x01
+ 240:	9a 81       	ldd	r25, Y+2	; 0x02
+ 242:	ab 81       	ldd	r26, Y+3	; 0x03
+ 244:	bc 81       	ldd	r27, Y+4	; 0x04
+ 246:	88 5e       	subi	r24, 0xE8	; 232
+ 248:	93 40       	sbci	r25, 0x03	; 3
+ 24a:	a0 40       	sbci	r26, 0x00	; 0
+ 24c:	b0 40       	sbci	r27, 0x00	; 0
+ 24e:	a0 f4       	brcc	.+40     	; 0x278 <__vector_6+0x72>
+ 250:	89 81       	ldd	r24, Y+1	; 0x01
+ 252:	9a 81       	ldd	r25, Y+2	; 0x02
+ 254:	ab 81       	ldd	r26, Y+3	; 0x03
+ 256:	bc 81       	ldd	r27, Y+4	; 0x04
+ 258:	01 96       	adiw	r24, 0x01	; 1
+ 25a:	a1 1d       	adc	r26, r1
+ 25c:	b1 1d       	adc	r27, r1
+ 25e:	89 83       	std	Y+1, r24	; 0x01
+ 260:	9a 83       	std	Y+2, r25	; 0x02
+ 262:	ab 83       	std	Y+3, r26	; 0x03
+ 264:	bc 83       	std	Y+4, r27	; 0x04
+ 266:	89 81       	ldd	r24, Y+1	; 0x01
+ 268:	9a 81       	ldd	r25, Y+2	; 0x02
+ 26a:	ab 81       	ldd	r26, Y+3	; 0x03
+ 26c:	bc 81       	ldd	r27, Y+4	; 0x04
+ 26e:	88 5e       	subi	r24, 0xE8	; 232
+ 270:	93 40       	sbci	r25, 0x03	; 3
+ 272:	a0 40       	sbci	r26, 0x00	; 0
+ 274:	b0 40       	sbci	r27, 0x00	; 0
+ 276:	60 f3       	brcs	.-40     	; 0x250 <__vector_6+0x4a>
+ISR(INT4_vect){
+         FND_On(4, 0, 1);   Delay(1000);
+}
+ISR(INT5_vect){
+         FND_On(5, 1, 1);   Delay(1000);
+}
+ 278:	0f 90       	pop	r0
+ 27a:	0f 90       	pop	r0
+ 27c:	0f 90       	pop	r0
+ 27e:	0f 90       	pop	r0
+ 280:	cf 91       	pop	r28
+ 282:	df 91       	pop	r29
+ 284:	bf 91       	pop	r27
+ 286:	af 91       	pop	r26
+ 288:	9f 91       	pop	r25
+ 28a:	8f 91       	pop	r24
+ 28c:	2f 91       	pop	r18
+ 28e:	0f 90       	pop	r0
+ 290:	0f be       	out	0x3f, r0	; 63
+ 292:	0f 90       	pop	r0
+ 294:	1f 90       	pop	r1
+ 296:	18 95       	reti
+
+00000298 <__vector_7>:
+ISR(INT6_vect){
+ 298:	1f 92       	push	r1
+ 29a:	0f 92       	push	r0
+ 29c:	0f b6       	in	r0, 0x3f	; 63
+ 29e:	0f 92       	push	r0
+ 2a0:	11 24       	eor	r1, r1
+ 2a2:	2f 93       	push	r18
+ 2a4:	8f 93       	push	r24
+ 2a6:	9f 93       	push	r25
+ 2a8:	af 93       	push	r26
+ 2aa:	bf 93       	push	r27
+ 2ac:	df 93       	push	r29
+ 2ae:	cf 93       	push	r28
+ 2b0:	00 d0       	rcall	.+0      	; 0x2b2 <__vector_7+0x1a>
+ 2b2:	00 d0       	rcall	.+0      	; 0x2b4 <__vector_7+0x1c>
+ 2b4:	cd b7       	in	r28, 0x3d	; 61
+ 2b6:	de b7       	in	r29, 0x3e	; 62
+         DDRD  =  0xFF;   // 1111 1111
+}
+
+
+void   FND_On(const int8_t1 Num, const int8_t1 Digit, const int8_t1 Dot){
+         if(Dot)  PORTD  =  FND_Font[Num]  &  0x7F;
+ 2b8:	82 e0       	ldi	r24, 0x02	; 2
+ 2ba:	82 bb       	out	0x12, r24	; 18
+         else      PORTD  =  FND_Font[Num];
+         PORTG  =  (PORTG  &  0xE4)  |  FND_Common[Digit];
+ 2bc:	80 91 65 00 	lds	r24, 0x0065
+ 2c0:	84 7e       	andi	r24, 0xE4	; 228
+ 2c2:	82 60       	ori	r24, 0x02	; 2
+ 2c4:	80 93 65 00 	sts	0x0065, r24
+}
+
+
+void   Delay(int32_t1 Delay){
+         volatile  int32_t1  i;
+         for(i=0; i<Delay; i++);
+ 2c8:	19 82       	std	Y+1, r1	; 0x01
+ 2ca:	1a 82       	std	Y+2, r1	; 0x02
+ 2cc:	1b 82       	std	Y+3, r1	; 0x03
+ 2ce:	1c 82       	std	Y+4, r1	; 0x04
+ 2d0:	89 81       	ldd	r24, Y+1	; 0x01
+ 2d2:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2d4:	ab 81       	ldd	r26, Y+3	; 0x03
+ 2d6:	bc 81       	ldd	r27, Y+4	; 0x04
+ 2d8:	88 5e       	subi	r24, 0xE8	; 232
+ 2da:	93 40       	sbci	r25, 0x03	; 3
+ 2dc:	a0 40       	sbci	r26, 0x00	; 0
+ 2de:	b0 40       	sbci	r27, 0x00	; 0
+ 2e0:	a0 f4       	brcc	.+40     	; 0x30a <__vector_7+0x72>
+ 2e2:	89 81       	ldd	r24, Y+1	; 0x01
+ 2e4:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2e6:	ab 81       	ldd	r26, Y+3	; 0x03
+ 2e8:	bc 81       	ldd	r27, Y+4	; 0x04
+ 2ea:	01 96       	adiw	r24, 0x01	; 1
+ 2ec:	a1 1d       	adc	r26, r1
+ 2ee:	b1 1d       	adc	r27, r1
+ 2f0:	89 83       	std	Y+1, r24	; 0x01
+ 2f2:	9a 83       	std	Y+2, r25	; 0x02
+ 2f4:	ab 83       	std	Y+3, r26	; 0x03
+ 2f6:	bc 83       	std	Y+4, r27	; 0x04
+ 2f8:	89 81       	ldd	r24, Y+1	; 0x01
+ 2fa:	9a 81       	ldd	r25, Y+2	; 0x02
+ 2fc:	ab 81       	ldd	r26, Y+3	; 0x03
+ 2fe:	bc 81       	ldd	r27, Y+4	; 0x04
+ 300:	88 5e       	subi	r24, 0xE8	; 232
+ 302:	93 40       	sbci	r25, 0x03	; 3
+ 304:	a0 40       	sbci	r26, 0x00	; 0
+ 306:	b0 40       	sbci	r27, 0x00	; 0
+ 308:	60 f3       	brcs	.-40     	; 0x2e2 <__vector_7+0x4a>
+ISR(INT5_vect){
+         FND_On(5, 1, 1);   Delay(1000);
+}
+ISR(INT6_vect){
+         FND_On(6, 2, 1);   Delay(1000);
+}
+ 30a:	0f 90       	pop	r0
+ 30c:	0f 90       	pop	r0
+ 30e:	0f 90       	pop	r0
+ 310:	0f 90       	pop	r0
+ 312:	cf 91       	pop	r28
+ 314:	df 91       	pop	r29
+ 316:	bf 91       	pop	r27
+ 318:	af 91       	pop	r26
+ 31a:	9f 91       	pop	r25
+ 31c:	8f 91       	pop	r24
+ 31e:	2f 91       	pop	r18
+ 320:	0f 90       	pop	r0
+ 322:	0f be       	out	0x3f, r0	; 63
+ 324:	0f 90       	pop	r0
+ 326:	1f 90       	pop	r1
+ 328:	18 95       	reti
+
+0000032a <__vector_8>:
+ISR(INT7_vect){
+ 32a:	1f 92       	push	r1
+ 32c:	0f 92       	push	r0
+ 32e:	0f b6       	in	r0, 0x3f	; 63
+ 330:	0f 92       	push	r0
+ 332:	11 24       	eor	r1, r1
+ 334:	2f 93       	push	r18
+ 336:	8f 93       	push	r24
+ 338:	9f 93       	push	r25
+ 33a:	af 93       	push	r26
+ 33c:	bf 93       	push	r27
+ 33e:	df 93       	push	r29
+ 340:	cf 93       	push	r28
+ 342:	00 d0       	rcall	.+0      	; 0x344 <__vector_8+0x1a>
+ 344:	00 d0       	rcall	.+0      	; 0x346 <__vector_8+0x1c>
+ 346:	cd b7       	in	r28, 0x3d	; 61
+ 348:	de b7       	in	r29, 0x3e	; 62
+         DDRD  =  0xFF;   // 1111 1111
+}
+
+
+void   FND_On(const int8_t1 Num, const int8_t1 Digit, const int8_t1 Dot){
+         if(Dot)  PORTD  =  FND_Font[Num]  &  0x7F;
+ 34a:	88 e7       	ldi	r24, 0x78	; 120
+ 34c:	82 bb       	out	0x12, r24	; 18
+         else      PORTD  =  FND_Font[Num];
+         PORTG  =  (PORTG  &  0xE4)  |  FND_Common[Digit];
+ 34e:	80 91 65 00 	lds	r24, 0x0065
+ 352:	84 7e       	andi	r24, 0xE4	; 228
+ 354:	81 60       	ori	r24, 0x01	; 1
+ 356:	80 93 65 00 	sts	0x0065, r24
+}
+
+
+void   Delay(int32_t1 Delay){
+         volatile  int32_t1  i;
+         for(i=0; i<Delay; i++);
+ 35a:	19 82       	std	Y+1, r1	; 0x01
+ 35c:	1a 82       	std	Y+2, r1	; 0x02
+ 35e:	1b 82       	std	Y+3, r1	; 0x03
+ 360:	1c 82       	std	Y+4, r1	; 0x04
+ 362:	89 81       	ldd	r24, Y+1	; 0x01
+ 364:	9a 81       	ldd	r25, Y+2	; 0x02
+ 366:	ab 81       	ldd	r26, Y+3	; 0x03
+ 368:	bc 81       	ldd	r27, Y+4	; 0x04
+ 36a:	88 5e       	subi	r24, 0xE8	; 232
+ 36c:	93 40       	sbci	r25, 0x03	; 3
+ 36e:	a0 40       	sbci	r26, 0x00	; 0
+ 370:	b0 40       	sbci	r27, 0x00	; 0
+ 372:	a0 f4       	brcc	.+40     	; 0x39c <__vector_8+0x72>
+ 374:	89 81       	ldd	r24, Y+1	; 0x01
+ 376:	9a 81       	ldd	r25, Y+2	; 0x02
+ 378:	ab 81       	ldd	r26, Y+3	; 0x03
+ 37a:	bc 81       	ldd	r27, Y+4	; 0x04
+ 37c:	01 96       	adiw	r24, 0x01	; 1
+ 37e:	a1 1d       	adc	r26, r1
+ 380:	b1 1d       	adc	r27, r1
+ 382:	89 83       	std	Y+1, r24	; 0x01
+ 384:	9a 83       	std	Y+2, r25	; 0x02
+ 386:	ab 83       	std	Y+3, r26	; 0x03
+ 388:	bc 83       	std	Y+4, r27	; 0x04
+ 38a:	89 81       	ldd	r24, Y+1	; 0x01
+ 38c:	9a 81       	ldd	r25, Y+2	; 0x02
+ 38e:	ab 81       	ldd	r26, Y+3	; 0x03
+ 390:	bc 81       	ldd	r27, Y+4	; 0x04
+ 392:	88 5e       	subi	r24, 0xE8	; 232
+ 394:	93 40       	sbci	r25, 0x03	; 3
+ 396:	a0 40       	sbci	r26, 0x00	; 0
+ 398:	b0 40       	sbci	r27, 0x00	; 0
+ 39a:	60 f3       	brcs	.-40     	; 0x374 <__vector_8+0x4a>
+ISR(INT6_vect){
+         FND_On(6, 2, 1);   Delay(1000);
+}
+ISR(INT7_vect){
+         FND_On(7, 3, 1);   Delay(1000);
+}
+ 39c:	0f 90       	pop	r0
+ 39e:	0f 90       	pop	r0
+ 3a0:	0f 90       	pop	r0
+ 3a2:	0f 90       	pop	r0
+ 3a4:	cf 91       	pop	r28
+ 3a6:	df 91       	pop	r29
+ 3a8:	bf 91       	pop	r27
+ 3aa:	af 91       	pop	r26
+ 3ac:	9f 91       	pop	r25
+ 3ae:	8f 91       	pop	r24
+ 3b0:	2f 91       	pop	r18
+ 3b2:	0f 90       	pop	r0
+ 3b4:	0f be       	out	0x3f, r0	; 63
+ 3b6:	0f 90       	pop	r0
+ 3b8:	1f 90       	pop	r1
+ 3ba:	18 95       	reti
+
+000003bc <KEY_Init>:
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+
+void   KEY_Init(void){
+         DDRE  &=  0x0F;    // ???? ???? & 0000 1111 -->
+ 3bc:	82 b1       	in	r24, 0x02	; 2
+ 3be:	8f 70       	andi	r24, 0x0F	; 15
+ 3c0:	82 b9       	out	0x02, r24	; 2
+         PORTE |=   0xF0;    // ???? ???? |   1111 0000 -->
+ 3c2:	83 b1       	in	r24, 0x03	; 3
+ 3c4:	80 6f       	ori	r24, 0xF0	; 240
+ 3c6:	83 b9       	out	0x03, r24	; 3
+         DDRE  |=    0x0F;   //  ???? ???? |   0000 1111 -->
+ 3c8:	82 b1       	in	r24, 0x02	; 2
+ 3ca:	8f 60       	ori	r24, 0x0F	; 15
+ 3cc:	82 b9       	out	0x02, r24	; 2
+         PORTE &=  0xF0;   //  ???? ???? &   1111 0000 -->
+ 3ce:	83 b1       	in	r24, 0x03	; 3
+ 3d0:	80 7f       	andi	r24, 0xF0	; 240
+ 3d2:	83 b9       	out	0x03, r24	; 3
+         EICRB   =    0xAA;  //   1010 1010 --> 
+ 3d4:	8a ea       	ldi	r24, 0xAA	; 170
+ 3d6:	8a bf       	out	0x3a, r24	; 58
+         EIMSK  =    0xF0;   //   1111 0000 --> E7, E6, E5, E4를 인터럽트 인지핀으로 사용하겠다.(입력용)
+ 3d8:	80 ef       	ldi	r24, 0xF0	; 240
+ 3da:	89 bf       	out	0x39, r24	; 57
+}
+ 3dc:	08 95       	ret
+
+000003de <_exit>:
+ 3de:	f8 94       	cli
+
+000003e0 <__stop_program>:
+ 3e0:	ff cf       	rjmp	.-2      	; 0x3e0 <__stop_program>
